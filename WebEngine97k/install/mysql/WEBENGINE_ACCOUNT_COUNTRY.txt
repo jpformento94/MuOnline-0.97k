@@ -1,0 +1,12 @@
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+CREATE TABLE {TABLE_NAME}(
+    account VARCHAR(10) NOT NULL,
+    country VARCHAR(10) NOT NULL,
+    lastchange DATETIME NULL,
+    PRIMARY KEY (account)
+);
+
+SET FOREIGN_KEY_CHECKS = 1; 
+

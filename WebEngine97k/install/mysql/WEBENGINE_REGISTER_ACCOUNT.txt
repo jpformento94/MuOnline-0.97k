@@ -1,0 +1,9 @@
+CREATE TABLE {TABLE_NAME}(
+    registration_account VARCHAR(50) NOT NULL,
+    registration_password VARCHAR(50) NOT NULL,
+    registration_email VARCHAR(50) NOT NULL,
+    registration_date VARCHAR(50) NOT NULL,
+    registration_ip VARCHAR(50) NOT NULL,
+    registration_key VARCHAR(50) NOT NULL,
+    PRIMARY KEY (registration_account)
+);

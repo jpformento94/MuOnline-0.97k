@@ -1,0 +1,8 @@
+CREATE TABLE {TABLE_NAME}(
+    news_id INT AUTO_INCREMENT PRIMARY KEY,
+    news_title TEXT NOT NULL,
+    news_author VARCHAR(50) NOT NULL,
+    news_date VARCHAR(50) NOT NULL,
+    news_content TEXT NOT NULL,
+    allow_comments INT NOT NULL
+);

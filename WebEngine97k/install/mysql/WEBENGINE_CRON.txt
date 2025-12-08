@@ -1,0 +1,11 @@
+CREATE TABLE {TABLE_NAME}(
+    cron_id INT AUTO_INCREMENT PRIMARY KEY,
+    cron_name VARCHAR(100) NOT NULL,
+    cron_description TEXT,
+    cron_file_run TEXT NOT NULL,
+    cron_run_time VARCHAR(50) NOT NULL,
+    cron_last_run VARCHAR(50),
+    cron_status INT NOT NULL,
+    cron_protected INT NOT NULL,
+    cron_file_md5 VARCHAR(50) NOT NULL
+);

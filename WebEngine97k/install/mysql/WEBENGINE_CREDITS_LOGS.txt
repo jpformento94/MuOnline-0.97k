@@ -1,0 +1,11 @@
+CREATE TABLE {TABLE_NAME}(
+    log_id INT AUTO_INCREMENT PRIMARY KEY,
+    log_config VARCHAR(50) NOT NULL,
+    log_identifier VARCHAR(50) NOT NULL,
+    log_credits INT NOT NULL,
+    log_transaction VARCHAR(50) NOT NULL,
+    log_date VARCHAR(50) NOT NULL,
+    log_inadmincp TINYINT,
+    log_module VARCHAR(50),
+    log_ip VARCHAR(50)
+);

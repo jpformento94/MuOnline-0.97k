@@ -1,0 +1,11 @@
+CREATE TABLE {TABLE_NAME}(
+    config_id INT AUTO_INCREMENT PRIMARY KEY,
+    config_title VARCHAR(50) NOT NULL,
+    config_database VARCHAR(50) NOT NULL,
+    config_table VARCHAR(50) NOT NULL,
+    config_credits_col VARCHAR(50) NOT NULL,
+    config_user_col VARCHAR(50) NOT NULL,
+    config_user_col_id VARCHAR(50) NOT NULL,
+    config_checkonline TINYINT NOT NULL,
+    config_display TINYINT NOT NULL
+);

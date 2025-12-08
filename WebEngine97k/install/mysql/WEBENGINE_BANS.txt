@@ -1,0 +1,8 @@
+CREATE TABLE {TABLE_NAME}(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    account_id VARCHAR(50) NOT NULL,
+    banned_by VARCHAR(50) NOT NULL,
+    ban_date INT NOT NULL,
+    ban_days INT NOT NULL,
+    ban_reason VARCHAR(100) NULL
+);

@@ -1,0 +1,6 @@
+CREATE TABLE {TABLE_NAME}(
+    user_id INT NOT NULL,
+    votesite_id INT NOT NULL,
+    timestamp VARCHAR(50) NOT NULL,
+    PRIMARY KEY (user_id, votesite_id)
+);

@@ -1,0 +1,8 @@
+CREATE TABLE {TABLE_NAME}(
+    download_id INT AUTO_INCREMENT PRIMARY KEY,
+    download_title VARCHAR(100) NOT NULL,
+    download_description VARCHAR(100),
+    download_link TEXT NOT NULL,
+    download_size FLOAT,
+    download_type INT NOT NULL
+);
