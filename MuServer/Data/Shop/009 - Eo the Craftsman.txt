@@ -4,6 +4,28 @@
 //SLOTS X = 0~7 , Y = 0~14 , * = Orden original
 //Index	Level	Dur	Skill	Luck	Option	ExcOp	SlotX	SlotY	Comment
 
-
+4,000    0       20      0       0       0       0       *       *       //Short Bow
+4,000    0       20      1       0       0       0       *       *       //Short Bow+Skill
+4,008    0       22      0       0       0       0       *       *       //Crossbow
+4,008    0       22      1       0       0       0       *       *       //Crossbow+Skill
+4,009    0       26      0       0       0       0       *       *       //Golden Crossbow
+4,009    0       26      1       0       0       0       *       *       //Golden Crossbow+Skill
+4,001    0       24      0       0       0       0       *       *       //Bow
+4,001    0       24      1       0       0       0       *       *       //Bow+Skill
+4,002    0       28      0       0       0       0       *       *       //Elven Bow
+4,002    0       28      1       0       0       0       *       *       //Elven Bow+Skill
+4,010    0       31      0       0       0       0       *       *       //Arquebus
+4,010    0       31      1       0       0       0       *       *       //Arquebus+Skill
+4,007    0       255     0       0       0       0       *       *       //Bolt
+4,007    1       255     0       0       1       0       *       *       //Bolt+1+1
+4,007    2       255     0       0       1       0       *       *       //Bolt+2+1
+4,015    0       255     0       0       0       0       *       *       //Arrow
+4,015    1       255     0       0       1       0       *       *       //Arrow+1+1
+4,015    2       255     0       0       1       0       *       *       //Arrow+2+1
+14,017   1       0       0       0       0       0       *       *       //Devil's Eye+1
+14,017   2       0       0       0       0       0       *       *       //Devil's Eye+2
+13,029   0       0       0       0       0       0       *       *       //Armor of Guardsman
+14,018   1       0       0       0       0       0       *       *       //Devil's Key+1
+14,018   2       0       0       0       0       0       *       *       //Devil's Key+2
 
 end

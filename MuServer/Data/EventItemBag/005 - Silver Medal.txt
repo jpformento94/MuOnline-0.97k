@@ -9,7 +9,39 @@ end
 
 1
 //Item	MinLvl	MaxLvl	Skill	Luck	Opt	Exce	Comment
-//00,000	0	0	0	0	0	0	//Comment
+   00,000	           3	       7	       0	     1	      3	          0	     //Kris	  
+   00,001	           3	       7	       0	     1	      3	          0	     //Short Sword		
+   00,002	           3	       7	       0	     1	      3	          0	     //Rapier
+   01,000	           3	       7	       0	     1	      3	          0	     //Small Axe	 
+   01,001	           3	       7	       0	     1	      3	          0	     //Hand Axe	
+   01,002              3	       7	       1	     1	      3	          0      //Double Axe
+   02,000              3	       7	       0	     1	      3	          0      //Mace
+   02,001              3	       7	       1	     1	      3	          0      //Morning Star
+   03,002              3	       7	       0	     1	      3	          0      //Dragon Lance
+   03,005              3	       7	       0	     1	      3	          0      //Double Poleax
+   04,000              3	       7	       1	     1	      3	          0      //Short Bow
+   04,001              3	       7	       1	     1	      3	          0      //Bow
+   04,008              3	       7	       1	     1	      3	          0      //Crossbow
+   05,000              3	       7	       0	     1	      3	          0      //Skull Staff	
+   05,001              3	       7	       0	     1	      3	          0      //Serpent Staff		
+   06,000              3	       7	       0	     1	      3	          0      //Small Shield		
+   06,001              3	       7	       0	     1	      3	          0      //Horn Shield
+   06,004              3	       7	       0	     1	      3	          0      //Buckler	
+   07,001              3	       7	       0	     1	      3	          0      //Pad Helm 
+   08,001              3	       7	       0	     1	      3	          0      //Pad Armor 
+   09,001              3	       7	       0	     1	      3	          0      //Pad Pants 
+   10,001              3	       7	       0	     1	      3	          0      //Pad Gloves
+   11,001              3	       7	       0	     1	      3	          0      //Pad Boots 
+   07,005              3	       7	       0	     1	      3	          0      //Leather Helm 
+   08,005              3	       7	       0	     1	      3	          0      //Leather Armor 
+   09,005              3	       7	       0	     1	      3	          0      //Leather Pants 
+   10,005              3	       7	       0	     1	      3	          0      //Leather Gloves
+   11,005              3	       7	       0	     1	      3	          0      //Leather Boots 
+   07,010              3	       7	       0	     1	      3	          0      //Vine Helm 
+   08,010              3	       7	       0	     1	      3	          0      //Vine Armor 
+   09,010              3	       7	       0	     1	      3	          0      //Vine Pants 
+   10,010              3	       7	       0	     1	      3	          0      //Vine Gloves
+   11,010              3	       7	       0	     1	      3	          0      //Vine Boots
 end
 
 //======================================

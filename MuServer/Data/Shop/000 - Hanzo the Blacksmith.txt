@@ -4,6 +4,26 @@
 //SLOTS X = 0~7 , Y = 0~14 , * = Orden original
 //Index	Level	Dur	Skill	Luck	Option	ExcOp	SlotX	SlotY	Comment
 
+0,001	0	*	1	1	0	0	*	*	//Short Sword
+0,002	0	*	1	1	0	0	*	*	//Rapier
+0,004	0	*	1	1	0	0	*	*	//Sword of Assassin
 
+7,000	0	*	0	1	0	0	*	* 	//Bronze Helm
+8,000	0	*	0	1	0	0	*	* 	//Bronze Armor
+9,000	0	*	0	1	0	0	*	* 	//Bronze Pants
+10,000	0	*	0	1	0	0	*	* 	//Bronze Gloves
+11,000	0	*	0	1	0	0	*	* 	//Bronze Boots
+10,006	0	*	0	1	0	0	*	* 	//Scale Gloves
+11,006	0	*	0	1	0	0	*	* 	//Scale Boots
+
+1,001	1	*	0	1	0	0	*	* 	//Hand Axe
+2,000	0	*	0	1	0	0	*	* 	//Mace
+2,002	1	*	1	1	0	0	*	* 	//Flail
+1,002	2	*	1	1	0	0	*	* 	//Double Axe
+0,000	0 	*	0	1	0	0	*	* 	//Kris
+3,005	0	*	0	1	0	0	*	* 	//Double Poleaxe
+6,000	0	*	0	1	0	0	*	* 	//Small Shield
+6,004	0	*	0	1	0	0	*	* 	//Buckler
+6,001	0	*	0	1	0	0	*	* 	//Horn Shield
 
 end

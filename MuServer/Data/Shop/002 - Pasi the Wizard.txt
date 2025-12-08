@@ -4,6 +4,16 @@
 //SLOTS X = 0~7 , Y = 0~14 , * = Orden original
 //Index	Level	Dur	Skill	Luck	Option	ExcOp	SlotX	SlotY	Comment
 
-
+15,003	0	0	0	0	0	0	*	*	//Scroll of Fire Ball
+15,010	0	0	0	0	0	0	*	*	//Scroll of Power Wave
+7,002	0	28	0	0	0	0	*	*	//Pad Helm
+8,002	0	28	0	0	0	0	*	*	//Pad Armor
+9,002	0	28	0	0	0	0	*	*	//Pad Pants
+10,002	0	28	0	0	0	0	*	*	//Pad Gloves
+11,002	0	28	0	0	0	0	*	*	//Pad Boots
+10,004	0	30	0	0	0	0	*	*	//Bone Gloves
+11,004	0	30	0	0	0	0	*	*	//Bone Boots
+5,000	0	20	0	0	0	0	*	*	//Skull Staff
+5,001	0	38	0	0	0	0	*	*	//Angelic Staff
 
 end

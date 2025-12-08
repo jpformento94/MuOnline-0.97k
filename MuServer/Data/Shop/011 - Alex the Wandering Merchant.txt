@@ -4,6 +4,27 @@
 //SLOTS X = 0~7 , Y = 0~14 , * = Orden original
 //Index	Level	Dur	Skill	Luck	Option	ExcOp	SlotX	SlotY	Comment
 
-
+14,008   0       1       0       0       0       0       *       *       // Apple
+14,005   0       1       0       0       0       0       *       *       // Mana Potion
+14,003   0       1       0       0       0       0       *       *       // Large Healing Potion
+4,003    0       36      1       0       0       0       *       *       // Battle Bow+Skill
+1,004    0       32      0       0       0       0       *       *       // Elven Axe
+3,003    0       32      0       0       0       0       *       *       // Giant Trident
+0,008    0       36      0       0       0       0       *       *       // Serpent Sword
+0,009    0       40      1       0       0       0       *       *       // Sword of Salamander+Skill
+0,010    0       47      0       0       0       0       *       *       // Light Saber
+0,005    0       39      1       0       0       0       *       *       // Blade+Skill
+3,007    0       54      0       0       0       0       *       *       // Berdysh
+6,010    0       35      0       0       0       0       *       *       // Large Round Shield
+6,003    0       36      0       0       0       0       *       *       // Elven Shield
+6,009    0       38      0       0       0       0       *       *       // Plate Shield
+7,008    0       44      0       0       0       0       *       *       // Brass Helm
+9,008    0       44      0       0       0       0       *       *       // Brass Pants
+10,012   0       32      0       0       0       0       *       *       // Wind Gloves
+11,012   0       32      0       0       0       0       *       *       // Wind Boots
+8,006    0       40      0       0       0       0       *       *       // Scale Armor
+9,006    0       40      0       0       0       0       *       *       // Scale Pants
+10,008   0       44      0       0       0       0       *       *       // Brass Gloves
+11,008   0       44      0       0       0       0       *       *       // Brass Boots
 
 end

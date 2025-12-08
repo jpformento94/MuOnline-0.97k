@@ -4,6 +4,29 @@
 //SLOTS X = 0~7 , Y = 0~14 , * = Orden original
 //Index	Level	Dur	Skill	Luck	Option	ExcOp	SlotX	SlotY	Comment
 
-
+4,007	0	255	0	0	0	0	*	*	//Bolt
+4,007	1	255	0	0	0	0	*	*	//Bolt+1+1
+4,007	2	255	0	0	0	0	*	*	//Bolt+2+1
+4,015 	0	255	0 	0 	0	0	*	*	//Arrow
+4,015 	1	255	0 	0 	0	0	*	*	//Arrow+1+1
+4,015 	2	255	0 	0 	0	0	*	*	//Arrow+2+1
+7,008   0       44      0       0       0       0       *       *       //Brass Helm
+9,008   0       44      0       0       0       0       *       *       //Brass Pants
+10,012  0       32      0       0       0       0       *       *       //Wind Gloves
+11,012  0       32      0       0       0       0       *       *       //Wind Boots
+6,010   0       35      0       0       0       0       *       *       //Large Round Shield
+6,003   0       36      0       0       0       0       *       *       //Elven Shield
+6,009   0       38      0       0       0       0       *       *       //Plate Shield
+4,003   0       36      0       0       0       0       *       *       //Battle Bow
+4,003   0       36      1       0       0       0       *       *       //Battle Bow+Skill
+1,004   0       32      0       0       0       0       *       *       //Elven Axe
+3,003   0       32      0       0       0       0       *       *       //Giant Trident
+1,005   0       36      0       0       0       0       *       *       //Battle Axe
+0,008   0       36      0       0       0       0       *       *       //Serpent Sword
+4,011   0       40      1       0       0       0       *       *       //Light Crossbow+Skill
+0,009   0       40      0       0       0       0       *       *       //Sword of Salamander
+0,009   0       40      1       0       0       0       *       *       //Sword of Salamander+Skill
+0,005   0       39      1       0       0       0       *       *       //Blade+Skill
+3,007   0       54      0       0       0       0       *       *       //Berdysh
 
 end

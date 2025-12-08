@@ -4,6 +4,44 @@
 //SLOTS X = 0~7 , Y = 0~14 , * = Orden original
 //Index	Level	Dur	Skill	Luck	Option	ExcOp	SlotX	SlotY	Comment
 
+14,000  0       1       0       0       0       0       *       *   //Apple
+14,001  0       1       0       0       0       0       *       *   //Small Healing Potion
+14,002  0       1       0       0       0       0       *       *   //Healing Potion
+14,003  0       1       0       0       0       0       *       *   //Large Healing Potion
+14,004  0       1       0       0       0       0       *       *   //Small Mana Potion
+14,005  0       1       0       0       0       0       *       *   //Mana Potion
+14,006  0       1       0       0       0       0       *       *   //Large Mana Potion
+14,008  0       1       0       0       0       0       *       *   //Antidote
+14,000  0       3       0       0       0       0       *       *   //Apple(x3)
+14,001  0       3       0       0       0       0       *       *   //Small Healing Potion(x3)
+14,002  0       3       0       0       0       0       *       *   //Healing Potion(x3)
+14,003  0       3       0       0       0       0       *       *   //Large Healing Potion(x3)
+14,004  0       3       0       0       0       0       *       *   //Small Mana Potion(x3)
+14,005  0       3       0       0       0       0       *       *   //Mana Potion(x3)
+14,006  0       3       0       0       0       0       *       *   //Large Mana Potion(x3)
+14,008  0       3       0       0       0       0       *       *   //Antidote(x3)
+7,004   0       30      0       0       0       0       *       *   //Bone Helm
+9,004   0       30      0       0       0       0       *       *   //Bone Pants
+7,006   0       40      0       0       0       0       *       *   //Scale Helm
+8,006   0       40      0       0       0       0       *       *   //Scale Armor
+9,006   0       40      0       0       0       0       *       *   //Scale Pants
+10,008  0       44      0       0       0       0       *       *   //Brass Gloves
+11,008  0       44      0       0       0       0       *       *   //Brass Boots
+6,002   0       32      0       0       0       0       *       *   //Kite Shield
+6,006   0       34      0       0       0       0       *       *   //Skull Shield
+3,002   0       34      0       0       0       0       *       *   //Dragon Lance
+0,003   0       27      0       0       0       0       *       *   //Katana
+1,003   0       28      0       0       0       0       *       *   //Tomahawk
+3,006   0       40      0       0       0       0       *       *   //Halberd
+2,002   0       32      0       0       0       0       *       *   //Flail
+0,006   0       30      0       0       0       0       *       *   //Gladius
+4,010   0       31      0       0       0       0       *       *   //Arquebus
+0,006   0       30      1       0       0       0       *       *   //Gladius+Skill
+4,010   0       31      1       0       0       0       *       *   //Arquebus+Skill
+0,007   0       34      0       0       0       0       *       *   //Falchion
+3,001   0       42      0       0       0       0       *       *   //Spear
+0,007   0       34      1       0       0       0       *       *   //Falchion+Skill
+
 
 
 end

@@ -9,7 +9,7 @@ end
 
 1
 //Item	MinLvl	MaxLvl	Skill	Luck	Opt	Exce	Comment
-//00,000	0	0	0	0	0	0	//Comment
+
 end
 
 //======================================
