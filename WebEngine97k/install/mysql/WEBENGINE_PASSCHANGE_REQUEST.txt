@@ -1,7 +1,0 @@
-CREATE TABLE {TABLE_NAME}(
-    user_id INT NOT NULL,
-    new_password VARCHAR(200) NOT NULL,
-    auth_code VARCHAR(50) NOT NULL,
-    request_date VARCHAR(50) NOT NULL,
-    PRIMARY KEY (user_id)
-);

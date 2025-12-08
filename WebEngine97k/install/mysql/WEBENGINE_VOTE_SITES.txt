@@ -1,7 +1,0 @@
-CREATE TABLE {TABLE_NAME}(
-    votesite_id INT AUTO_INCREMENT PRIMARY KEY,
-    votesite_title VARCHAR(50) NOT NULL,
-    votesite_link TEXT NOT NULL,
-    votesite_reward INT NOT NULL,
-    votesite_time INT NOT NULL
-);

@@ -1,6 +1,0 @@
-CREATE TABLE {TABLE_NAME}(
-    news_id INT NOT NULL,
-    news_language VARCHAR(10) NOT NULL,
-    news_title TEXT NOT NULL,
-    news_content TEXT NOT NULL
-);

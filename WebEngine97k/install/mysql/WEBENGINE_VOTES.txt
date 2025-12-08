@@ -1,7 +1,0 @@
-CREATE TABLE {TABLE_NAME}(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    user_ip VARCHAR(50) NOT NULL,
-    vote_site_id INT NOT NULL,
-    timestamp VARCHAR(50) NOT NULL
-);
