@@ -95,6 +95,13 @@ void CPatchs::Init()
 	SetDword(0x004EB6BD + 6, 0x0A); // Expand max digits in Warehouse deposit
 	SetDword(0x004EB6F8 + 6, 0x0A); // Expand max digits in Warehouse extraction
 
+	SetByte(0x004032A8, 0x0); // Fix Quest Item Preview
+
+	SetByte(0x004C394A, 0x07); // Fix Item Info Window on higher resolutions
+	SetByte(0x004C3803, 0x68); // Fix Item Info Window on higher resolutions
+
+	SetCompleteHook(0xE9, 0x004028EA, &this->FixQuestProceedButton);
+
 	// Remove JPG size limit
 	MemorySet(0x005299E7, 0x90, 11);
 	MemorySet(0x005299F8, 0x90, 12);
@@ -114,11 +121,16 @@ void CPatchs::Init()
 	// Fix Atlans and Icarus Goldens Overflow
 	MemorySet(0x00501292, 0x90, 0x0A);
 
+	SetCompleteHook(0xE9, 0x00439303, 0x004393B8); // Skip serial check
+
 	SetCompleteHook(0xE9, 0x00443AAF, 0x00443D76); // Fix Dinorant Movement
 
 	SetCompleteHook(0xE8, 0x0042B33D, &this->IgnoreRandomStuck);
 
-	SetCompleteHook(0xE9, 0x00483AC5, &this->FixChasingAttackMovement);
+	SetCompleteHook(0xE8, 0x00483AB2, &this->FixChasingAttackMovement); // BK
+	SetCompleteHook(0xE8, 0x0049EFF5, &this->FixChasingAttackMovement); // Elf
+	SetCompleteHook(0xE8, 0x004A5C7C, &this->FixChasingAttackMovement); // SM (Mana Shield)
+	SetCompleteHook(0xE8, 0x004A85C6, &this->FixChasingAttackMovement); // SM
 
 	SetCompleteHook(0xE9, 0x004292BC, &this->FixWeaponGlow);
 
@@ -139,11 +151,15 @@ void CPatchs::Init()
 
 	SetCompleteHook(0xE8, 0x0041ED4C, &this->ReadMainVersion);
 
+	SetCompleteHook(0xE9, 0x0050F750, &this->MyOpenMacro);
+
+	SetCompleteHook(0xE9, 0x0050F700, &this->MySaveMacro);
+
 	SetCompleteHook(0xE8, 0x005269EC, &this->MySaveScreen);
 
 	SetCompleteHook(0xE9, 0x005123C0, &this->MyBeginBitmap);
 
-	SetCompleteHook(0xE8, 0x004BFE63, &MyGluPerspective2); // Fix Items when changing zoom
+	SetCompleteHook(0xE9, 0x005112F0, &MyCreateScreenVector2);
 
 	SetCompleteHook(0xE8, 0x004BC0B3, &this->RenderNumArrow);
 
@@ -244,6 +260,43 @@ __declspec(naked) void CPatchs::FixShopNpcClose()
 	}
 }
 
+__declspec(naked) void CPatchs::FixQuestProceedButton()
+{
+	static DWORD jmpOnOk = 0x004028F2;
+	static DWORD jmpOnNot = 0x00402F18;
+
+	_asm
+	{
+		Pushad;
+	}
+
+	if (*(BYTE*)(g_csQuest + 0x1C882) == eQuestState::QUEST_CANCEL)
+	{
+		MouseLButtonPush = 0;
+
+		MouseUpdateTime = 0;
+
+		MouseUpdateTimeMax = 6;
+
+		goto EXIT;
+	}
+
+	_asm
+	{
+		Popad;
+		Mov Dword Ptr ds : [Esp + 0x28] , 0x00552460;
+		Jmp jmpOnOk;
+	}
+
+EXIT:
+
+	_asm
+	{
+		Popad;
+		Jmp jmpOnNot;
+	}
+}
+
 void CPatchs::IgnoreRandomStuck(DWORD c, DWORD Damage)
 {
 	if (*(WORD*)(c + 2) != 390)
@@ -252,20 +305,16 @@ void CPatchs::IgnoreRandomStuck(DWORD c, DWORD Damage)
 	}
 }
 
-_declspec(naked) void CPatchs::FixChasingAttackMovement()
+bool CPatchs::FixChasingAttackMovement(int sx, int sy, int tx, int ty, DWORD a, float fDistance)
 {
-	static DWORD jmpBack = 0x00483ACC;
-	static DWORD SendMove = 0x00491C40;
-
-	_asm
+	if (PathFinding2(sx, sy, tx, ty, a, fDistance))
 	{
-		Mov Byte Ptr[Ebp + 0x2ED], 5;
-		Push Ebp;
-		Push Ebp;
-		Call[SendMove];
-		Add Esp, 0x8;
-		Jmp jmpBack;
+		SendMove(Hero, Hero);
+
+		return true;
 	}
+
+	return false;
 }
 
 _declspec(naked) void CPatchs::FixWeaponGlow()
@@ -759,6 +808,47 @@ BOOL CPatchs::ReadMainVersion()
 	}
 
 	return TRUE;
+}
+
+void CPatchs::MyOpenMacro(char* FileName)
+{
+	FILE* fp = nullptr;
+
+	if (fopen_s(&fp, FileName, "rt") != 0 || !fp)
+	{
+		return;
+	}
+
+	memset(MacroText, 0, sizeof(char) * 10 * 256);
+
+	for (int i = 0; i < 10; ++i)
+	{
+		if (!fgets(MacroText[i], 256, fp))
+		{
+			break;
+		}
+
+		MacroText[i][strcspn(MacroText[i], "\r\n")] = '\0';
+	}
+
+	fclose(fp);
+}
+
+void CPatchs::MySaveMacro(char* FileName)
+{
+	FILE* fp = nullptr;
+
+	if (fopen_s(&fp, FileName, "wt") != 0 || !fp)
+	{
+		return;
+	}
+
+	for (int i = 0; i < 10; ++i)
+	{
+		fprintf(fp, "%s\n", MacroText[i]);
+	}
+
+	fclose(fp);
 }
 
 void CPatchs::MySaveScreen()

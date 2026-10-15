@@ -18,9 +18,11 @@ private:
 
 	static void FixShopNpcClose();
 
+	static void FixQuestProceedButton();
+
 	static void IgnoreRandomStuck(DWORD c, DWORD Damage);
 
-	static void FixChasingAttackMovement();
+	static bool FixChasingAttackMovement(int sx, int sy, int tx, int ty, DWORD a, float fDistance);
 
 	static void FixWeaponGlow();
 
@@ -33,6 +35,10 @@ private:
 	static int OpenObjectsEnc(char* FileName);
 
 	static BOOL ReadMainVersion();
+
+	static void MyOpenMacro(char* FileName);
+
+	static void MySaveMacro(char* FileName);
 
 	static void MySaveScreen();
 

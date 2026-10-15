@@ -61,7 +61,7 @@ void CItemPosition::MyRenderItem3D(float sx, float sy, float Width, float Height
 {
 	bool Success = false;
 
-	if ((!*(DWORD*)0x7E91388 || PickUp) && IsWorkZone((int)sx, (int)sy, (int)Width, (int)Height))
+	if ((!pPickedItem->Key || PickUp) && IsWorkZone((int)sx, (int)sy, (int)Width, (int)Height))
 	{
 		Success = true;
 	}
@@ -435,7 +435,14 @@ void CItemPosition::MyRenderObjectScreen(int Type, int ItemLevel, int Option1, f
 			ObjectSelect_Angle[1] = WorldTime * 0.45f;
 		}
 
-		ObjectSelect_Type = Type;
+		if (Type >= MODEL_HELM && Type < MODEL_BOOTS + MAX_ITEM_TYPE)
+		{
+			ObjectSelect_Type = MODEL_PLAYER;
+		}
+		else
+		{
+			ObjectSelect_Type = Type;
+		}
 
 		DWORD b = gLoadModels.GetModels() + (188 * ObjectSelect_Type);
 
@@ -447,13 +454,35 @@ void CItemPosition::MyRenderObjectScreen(int Type, int ItemLevel, int Option1, f
 
 		ObjectSelect_PriorAction = 0;
 
-		*(float*)(b + 0x84) = 0; // b->BodyHeight = 0.0f;
+		if (Type >= MODEL_HELM && Type < MODEL_HELM + MAX_ITEM_TYPE)
+		{
+			*(float*)(b + 0x84) = -160.0f; // b->BodyHeight = 0.0f;
+		}
+		else if (Type >= MODEL_ARMOR && Type < MODEL_ARMOR + MAX_ITEM_TYPE)
+		{
+			*(float*)(b + 0x84) = -100.0f; // b->BodyHeight = 0.0f;
+		}
+		else if (Type >= MODEL_GLOVES && Type < MODEL_GLOVES + MAX_ITEM_TYPE)
+		{
+			*(float*)(b + 0x84) = -70.0f; // b->BodyHeight = 0.0f;
+		}
+		else if (Type >= MODEL_PANTS && Type < MODEL_PANTS + MAX_ITEM_TYPE)
+		{
+			*(float*)(b + 0x84) = -50.0f; // b->BodyHeight = 0.0f;
+		}
+		else
+		{
+			*(float*)(b + 0x84) = 0.0f; // b->BodyHeight = 0.0f;
+		}
 
 		float Scale = lpInfo->Scale;
 
 		BMD_Animation(b, BoneTransform, ObjectSelect_AnimationFrame, ObjectSelect_PriorAnimationFrame, ObjectSelect_PriorAction, ObjectSelect_Angle, ObjectSelect_HeadAngle, false, false);
 
-		DWORD o = CreateObject(Type, Position, ObjectSelect_Angle, Scale);
+		BYTE Armor[444]; // sizeof(OBJECT)
+		memset(Armor, 0, sizeof(Armor));
+
+		DWORD o = (DWORD)Armor;
 
 		*(short*)(o + 0x2) = Type; // o->Type = Type;
 

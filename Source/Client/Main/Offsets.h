@@ -14,7 +14,7 @@
 
 // State
 #define SceneFlag *(int*)0x005615C0
-#define	World *(int*)0x0055A7AC
+#define World *(int*)0x0055A7AC
 #define MouseX *(int*)0x083A427C
 #define MouseY *(int*)0x083A4278
 #define g_iNoMouseTime *(int*)0x055CA028
@@ -40,6 +40,7 @@
 #define WorldTime *(float*)0x05826E08
 #define DeltaT *(float*)0x0055979C
 #define FPS *(float*)0x05826DF8
+#define EnableSoccer *(bool*)0x05826D31
 
 // Interface
 #define pPickedItem (&*(ITEM*)0x07E91350)
@@ -66,6 +67,7 @@
 #define EventWindowOpened *(BYTE*)0x07EAA11C
 #define EventType *(DWORD*)0x07EAA120
 #define GuildCreatorOpened *(BYTE*)0x07EAA124
+#define g_csQuest *(DWORD*)0x00583D8C
 #define QuestNPCOpened *(BYTE*)0x00583D7F // DWORD g_csQuest = *(DWORD*)0x00583D8C -> *(BYTE*)(g_csQuest + 0x1C87F)
 #define GoldenArcherOpenType *(int*)0x07EAA128
 #define GoldenArcherItemCount *(int*)0x07EAA12C
@@ -76,6 +78,7 @@
 #define MixState *(DWORD*)0x07EAA140
 #define MixType *(DWORD*)0x07EAA16C
 #define ErrorMessage *(BYTE*)0x083A7C24
+#define SetErrorMessage ((void(_cdecl*)(int message)) 0x005142D0)
 #define UpdateWindowsMouse ((void(_cdecl*)())0x004ECB00)
 #define GetScreenWidth ((int(_cdecl*)()) 0x004CB520)
 #define RenderInventoryInterface ((void(_cdecl*)(int StartX, int StartY, int Flag)) 0x004ECBA0)
@@ -85,6 +88,7 @@
 #define m_nYourTradeWait *(int*)0x07EAA100
 #define m_bMyConfirm *(bool*)0x07EAA0FD
 #define m_nMyTradeWait *(int*)0x07EAA104
+#define GuildWarName (&*(char*)0x05826BFC)
 
 // Drawing
 #define RenderBitmap ((void(_cdecl*)(int Texture, float x, float y, float Width, float Height, float u, float v, float uWidth, float vHeight, bool Scale, bool StartScale)) 0x005125A0)
@@ -132,6 +136,7 @@
 #define InputTextWidth *(int*)0x00559C8C
 #define InputTextMax (&*(int*)0x00559C94)
 #define InputNumber *(int*)0x00559C88
+#define MacroText ((char (*)[256])0x07E0FFC8)
 #define ClearInput ((void(_cdecl*)(BOOL bClearWhisperTarget)) 0x0047EC60)
 #define RenderInputText ((void(_cdecl*)(int x, int y, int Index)) 0x0047F0B0)
 
@@ -168,6 +173,7 @@
 #define PathFinding2 ((bool(_cdecl*)(int sx, int sy, int tx, int ty, DWORD a, float fDistance)) 0x0043F3E0)
 #define PlayerPosition (&*(float*)(Hero + 16))
 #define CreateChat ((void(_cdecl*)(char *ID, const char *Text, DWORD Owner, int Flag, int SetColor)) 0x00481BA0)
+#define SendMove ((void(_cdecl*)(DWORD c, DWORD o)) 0x00491C40)
 
 // Item
 #define SendRequestEquipmentItem ((bool(_cdecl*)(int SrcFlag, int SrcIndex, int DstFlag, int DstIndex)) 0x0043C250)

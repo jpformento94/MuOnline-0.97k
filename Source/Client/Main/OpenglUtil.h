@@ -16,6 +16,6 @@ void MyRenderPointRotate(int Texture, float ix, float iy, float iWidth, float iH
 
 void MyCreateScreenVector(int sx, int sy, vec3_t Target);
 
-void MyGluPerspective2(float Fov, float Aspect, float ZNear, float ZFar);
+void MyCreateScreenVector2(int sx, int sy, vec3_t Target);
 
 void RenderTriangleColor(float x, float y, float Width, float Height);

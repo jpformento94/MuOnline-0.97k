@@ -294,21 +294,31 @@ void MyCreateScreenVector(int sx, int sy, vec3_t Target)
 	VectorAdd(MousePosition, p2, Target);
 }
 
-void MyGluPerspective2(float Fov, float Aspect, float ZNear, float ZFar)
+void MyCreateScreenVector2(int sx, int sy, vec3_t Target)
 {
-	gluPerspective(Fov, Aspect, 20.0f, 2000.0f);
+	sx = sx * WindowWidth / 640;
 
-	ScreenCenterX = OpenglWindowX + OpenglWindowWidth / 2;
+	sy = sy * WindowHeight / 480;
 
-	ScreenCenterY = OpenglWindowY + OpenglWindowHeight / 2;
+	vec3_t p1, p2;
 
-	ScreenCenterYFlip = WindowWidth - ScreenCenterY;
+	p1[0] = (float)(sx - ScreenCenterX) * CameraViewFar * PerspectiveX;
 
-	float AspectY = (float)(WindowHeight) / (float)(OpenglWindowHeight);
+	p1[1] = -(float)(sy - ScreenCenterY) * CameraViewFar * PerspectiveY;
 
-	PerspectiveX = tanf(Fov * 0.5f * 3.141592f / 180.0f) / (float)(OpenglWindowWidth / 2) * Aspect;
+	p1[2] = -CameraViewFar;
 
-	PerspectiveY = tanf(Fov * 0.5f * 3.141592f / 180.0f) / (float)(OpenglWindowHeight / 2) * AspectY;
+	p2[0] = -CameraMatrix[0][3];
+
+	p2[1] = -CameraMatrix[1][3];
+
+	p2[2] = -CameraMatrix[2][3];
+
+	VectorIRotate(p2, CameraMatrix, MousePosition);
+
+	VectorIRotate(p1, CameraMatrix, p2);
+
+	VectorAdd(MousePosition, p2, Target);
 }
 
 void RenderTriangleColor(float x, float y, float Width, float Height)

@@ -214,6 +214,8 @@ enum eSkillNumber
 /* Models */
 enum eModelNumbers
 {
+	MODEL_PLAYER = 390,
+
 	MODEL_SWORD = ITEM_BASE_MODEL,
 	MODEL_AXE = MODEL_SWORD + MAX_ITEM_TYPE,
 	MODEL_MACE = MODEL_AXE + MAX_ITEM_TYPE,
@@ -252,4 +254,20 @@ enum ePkLevel
 	PKLVL_WARNING = 4,
 	PKLVL_OUTLAW = 5,
 	PKLVL_KILLER = 6
+};
+
+/* Quest State */
+enum eQuestState
+{
+	QUEST_NORMAL = 0,
+	QUEST_ACCEPT = 1,
+	QUEST_FINISH = 2,
+	QUEST_CANCEL = 3,
+};
+
+/* War Types */
+enum eGuildWarType
+{
+	GUILD_WAR_TYPE_NORMAL = 0,
+	GUILD_WAR_TYPE_SOCCER = 1,
 };
